@@ -1,10 +1,11 @@
+import string
+
 def isPalindrome(s: str):
-    result = ""
-    for i in s:
-        if(i.isalpha()):
-            result += i
-    result = result.lower()
-    if(result == result[::-1]):
+    s = "".join(s.split())
+    s = ''.join(ch for ch in s if ch not in string.punctuation)
+    s = s.lower()
+    print(s)
+    if(s == s[::-1]):
         return True
     return False
 
